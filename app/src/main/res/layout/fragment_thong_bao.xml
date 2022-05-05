@@ -10,6 +10,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Thông báo" />
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Chức năng thông báo đang trong quá trình phát triển"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 
 </FrameLayout>

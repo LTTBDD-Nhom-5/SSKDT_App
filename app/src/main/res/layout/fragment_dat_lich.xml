@@ -9,6 +9,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Đặt lịch" />
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Chức năng đặt lịch đang trong quá trình hoàn thiện"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </FrameLayout>
