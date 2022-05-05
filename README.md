@@ -16,3 +16,14 @@
   <li> chỉnh sửa tờ khai trong 24h</li>
   <li> Xóa các tờ khai không còn hiệu lực</li>
   </ul>
+ <h5><b>Các giao diện đã hoàn thành:</b></h5>
+ <ul type="none">
+  <li>
+      <h5>Giao diện đăng nhập</h5>
+      <img src="./image/login_screen.png" alt="Picture" />
+  </li>
+  <li>
+      <h5>Giao diện đăng ký</h5>
+      <img src="./image/register_screen.png" alt="Picture" />
+  </li>
+ </ul>
