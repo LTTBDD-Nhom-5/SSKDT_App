@@ -26,4 +26,8 @@
       <h5>Giao diện đăng ký</h5>
       <img src="./image/register_screen.png" alt="Picture" />
   </li>
+  <li>
+      <h5>Giao diện thay đổi mật khẩu</h5>
+      <img src="./image/forgotpassword_screen.png" alt="Picture" />
+  </li>
  </ul>
