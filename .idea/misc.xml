@@ -28,6 +28,18 @@
         <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v01/app/src/main/res/drawable/background_txt.xml" value="0.2555" />
         <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v01/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v01/app/src/main/res/layout/register.xml" value="0.4" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/drawable/background_01.xml" value="0.2405" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/drawable/background_02.xml" value="0.2405" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/activity_home.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/activity_main.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/forgot_password.xml" value="0.536" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/fragment_ca_nhan.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/fragment_dat_lich.xml" value="0.2" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/fragment_thong_bao.xml" value="0.144" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/fragment_trang_chu.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/info_health.xml" value="0.264" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/item_gridview_home.xml" value="0.17527173913043478" />
+        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v02/app/src/main/res/layout/item_listview_user.xml" value="0.17527173913043478" />
       </map>
     </option>
   </component>
