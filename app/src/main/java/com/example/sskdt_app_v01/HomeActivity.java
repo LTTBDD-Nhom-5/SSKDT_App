@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int id = menuItem.getItemId();
+                int id  = menuItem.getItemId();
                 switch (id) {
                     case R.id.TrangChu:
                         viewPager.setCurrentItem(0);
@@ -73,6 +73,8 @@ public class HomeActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+
     }
 
     private void mapping() {

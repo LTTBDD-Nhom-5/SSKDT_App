@@ -3,28 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable-v24/background_btn.xml" value="0.14635416666666667" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14635416666666667" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable/background_01.xml" value="0.14635416666666667" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable/background_circle.xml" value="0.14635416666666667" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable/background_radius_gray.xml" value="0.14635416666666667" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable/background_radius_white.xml" value="0.14635416666666667" />
         <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable/background_rectangle_44.xml" value="0.14635416666666667" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable/background_txt.xml" value="0.14635416666666667" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.14635416666666667" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/drawable/ic_person_02.xml" value="0.14322916666666666" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/activity_home.xml" value="0.13020833333333334" />
         <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/activity_list_health_declaration.xml" value="0.264" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/forgot_password.xml" value="0.13020833333333334" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/fragment_ca_nhan.xml" value="0.13020833333333334" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/fragment_dat_lich.xml" value="0.13020833333333334" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/fragment_thong_bao.xml" value="0.13020833333333334" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/fragment_trang_chu.xml" value="0.13020833333333334" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/item_gridview_home.xml" value="0.13020833333333334" />
         <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/item_list_lskbyt.xml" value="0.4" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/item_listview_user.xml" value="0.13020833333333334" />
-        <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/layout/register.xml" value="0.13020833333333334" />
         <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.13020833333333334" />
         <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
         <entry key="..\:/Temp/Mobile/SSKDT_App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.14322916666666666" />
@@ -32,7 +13,35 @@
         <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v01/app/src/main/res/drawable/background_01.xml" value="0.233" />
         <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v01/app/src/main/res/drawable/background_txt.xml" value="0.2555" />
         <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v01/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Users/ADMIN/Downloads/SSKDT_App_v01/app/src/main/res/layout/register.xml" value="0.4" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable-v24/background_btn.xml" value="0.269" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.269" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/background_01.xml" value="0.269" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/background_02.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/background_circle.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/background_radius_gray.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/background_radius_white.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/background_txt.xml" value="0.269" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_background_icon_header_home_1.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_background_icon_header_home_2.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_background_icon_header_home_3.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_bell.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_calendar.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_double_arrow.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_house_door.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.269" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/drawable/ic_person_02.xml" value="0.332" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/activity_home.xml" value="0.41938405797101447" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/activity_main.xml" value="0.41938405797101447" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/forgot_password.xml" value="0.41938405797101447" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/fragment_ca_nhan.xml" value="0.41938405797101447" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/fragment_dat_lich.xml" value="0.41938405797101447" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/fragment_thong_bao.xml" value="0.41938405797101447" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/fragment_trang_chu.xml" value="0.41938405797101447" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/info_health.xml" value="0.25" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/info_user.xml" value="0.41938405797101447" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/item_gridview_home.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/item_listview_user.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/pc2/AndroidStudioProjects/SSKDT_App/app/src/main/res/layout/register.xml" value="0.41938405797101447" />
       </map>
     </option>
   </component>
