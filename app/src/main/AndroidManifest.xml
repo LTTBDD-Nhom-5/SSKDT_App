@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SSKDT_App_v01">
+<!--        <activity-->
+<!--            android:name=".ListHealthDeclarationActivity"-->
+<!--            android:exported="true" />-->
         <activity
-            android:name=".MainActivity"
+            android:name=".ListHealthDeclarationActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
