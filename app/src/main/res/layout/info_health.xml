@@ -74,7 +74,7 @@
             android:id="@+id/textView13"
             android:layout_width="272dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dpdp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:letterSpacing="0.1"
             android:text="Dùng mã QR ở trên để check in, check out tại các địa điểm càn thiết"
@@ -100,7 +100,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="412dp"
             android:layout_height="461dp"
-            android:layout_marginTop="8dpdp"
+            android:layout_marginTop="8dp"
             android:background="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
