@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 
+import com.example.sskdt_app_v01.HealthDeclarationActivity;
 import com.example.sskdt_app_v01.HomeActivity;
 import com.example.sskdt_app_v01.ListHealthDeclarationActivity;
 import com.example.sskdt_app_v01.R;
@@ -45,14 +46,14 @@ public class TrangChuFragment extends Fragment {
         gridView.setAdapter(adapter);
 
 
-//        ConstraintLayout btnKhaiBaoYTe = view.findViewById(R.id.header_home_khaibao);
-//        btnKhaiBaoYTe.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), HomeActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        ConstraintLayout btnKhaiBaoYTe = view.findViewById(R.id.header_home_khaibao);
+        btnKhaiBaoYTe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), HealthDeclarationActivity.class);
+                startActivity(intent);
+            }
+        });
         ConstraintLayout btnLichsuKhaiBao = view.findViewById(R.id.header_home_tuvan);
         btnLichsuKhaiBao.setOnClickListener(new View.OnClickListener() {
             @Override
