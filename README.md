@@ -1,5 +1,89 @@
 # Môn lập trình thiết bị di động - nhóm 5
-<h3>Bài tập ứng dụng sổ sức khỏe điện tử</h3>
+### Bài tập ứng dụng sổ sức khỏe điện tử
+<h5><b>Danh sách thành viên:</b></h5>
+<table>
+  <thead>
+     <th>
+        <td>Mã số sinh viên</td>
+        <td>Họ và tên</td>
+        <td>Đánh giá (A,B,C,D,F)</td>
+        <td>Ghi chú</td>
+    </th>
+  </thead>
+  <tbody>
+      <tr>
+        <td>1</td>
+        <td>19528341</td>
+        <td>Nguyễn Hải Nam</td>
+        <td>A</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Chưa có</td>
+        <td>Nguyễn Quý Khả</td>
+        <td>A</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Chưa có</td>
+        <td>Nguyễn Nhật Quang</td>
+        <td>A</td>
+        <td></td>
+      </tr>
+   </tbody>
+ </table>
+
+<h5><b>Bảng đánh giá:</b></h5>
+<table>
+  <thead>
+     <th>
+        <td>Mục tiêu</td>
+        <td>Mức độ hoàn thành</td>
+        <td>Ghi chú</td>
+    </th>
+  </thead>
+  <tbody>
+      <tr>
+        <td>1</td>
+        <td>Thiết kế giao diện bằng figma</td>
+        <td>100%</td>
+        <td>10 screen</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Login - register bằng firebase</td>
+        <td>100%</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>FireStore Database CURD</td>
+        <td>100%</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Storage (file - image)</td>
+        <td>100%</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Đồng bộ dữ liệu SQLite vs firebase</td>
+        <td>0%</td>
+        <td>Team sử dụng toàn bộ bằng firebase</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Sự dụng các công cụ như github, figma, trello</td>
+        <td>75%</td>
+        <td>Team chỉ sủ dụng figma và github</td>
+      </tr>
+  </tbody>
+ </table>
+
 <h5><b>Link figma:</b>  <a href="https://www.figma.com/file/TxC1jl9mxBXi4UQTuzkYex/LTTBDD_Figma_SSK%C4%90T_app" target="_blank">https://www.figma.com/file/TxC1jl9mxBXi4UQTuzkYex/LTTBDD_Figma_SSK%C4%90T_app</a> </h5>
 <h5><b>Mô tả:</b></h5>
 <p>
