@@ -27,6 +27,7 @@
         <activity android:name=".InfoUserActivity" />
         <activity android:name=".ListHealthDeclarationActivity"/>
         <activity android:name=".HealthDeclarationActivity"/>
+        <activity android:name=".Info_healthActivity"/>
     </application>
 
 </manifest>
