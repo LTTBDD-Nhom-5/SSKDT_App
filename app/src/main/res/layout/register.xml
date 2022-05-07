@@ -104,7 +104,7 @@
             app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2" />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginTop="24dp"

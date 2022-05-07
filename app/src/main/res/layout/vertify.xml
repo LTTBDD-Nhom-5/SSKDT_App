@@ -29,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_verity"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginBottom="56dp"
@@ -49,13 +49,12 @@
             android:text="Nếu bạn chưa nhận được mã xác thực hãy nhấn"
             android:textColor="#000000"
             android:textSize="17sp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_return_register"
+            app:layout_constraintBottom_toTopOf="@+id/txt_resend"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent" />
-
         <TextView
-            android:id="@+id/btn_return_register"
+            android:id="@+id/txt_resend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="68dp"
@@ -65,17 +64,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/verity_code"
             android:layout_width="350dp"
             android:layout_height="57dp"
             android:background="@drawable/background_txt"
             android:ems="10"
             android:gravity="center"
             android:inputType="number"
-            app:layout_constraintBottom_toTopOf="@+id/btn_login"
+            app:layout_constraintBottom_toTopOf="@+id/btn_verity"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
