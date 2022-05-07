@@ -104,11 +104,11 @@
  <ul type="none">
   <li>
       <h5>Giao diện đăng nhập</h5>
-      <img src="./image/log_screen.png" alt="Picture" />
+      <img src="./image/screen_logins.png" alt="Picture" />
   </li>
   <li>
       <h5>Giao diện đăng ký</h5>
-      <img src="./image/register_screen.png" alt="Picture" />
+      <img src="./image/screen_register.png" alt="Picture" />
   </li>
   <li>
       <h5>Giao diện thay đổi mật khẩu</h5>
@@ -116,7 +116,7 @@
   </li>
     <li>
       <h5>Giao diện xác thực</h5>
-      <img src="./image/auth_screen.png" alt="Picture" />
+      <img src="./image/vertify_screen.png" alt="Picture" />
   </li>
    <li>
       <h5>Giao diện trang chủ</h5>
@@ -136,7 +136,7 @@
   </li>
    <li>
       <h5>Giao diện hoàn thành khai báo</h5>
-      <img src="./image/done_screen.png" alt="Picture" />
+      <img src="./image/healt_info_screen.png" alt="Picture" />
   </li>
     <li>
       <h5>Giao diện danh sách thông tin khai báo</h5>

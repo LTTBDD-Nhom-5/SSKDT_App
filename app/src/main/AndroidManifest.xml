@@ -29,6 +29,7 @@
         <activity android:name=".HealthDeclarationActivity"/>
         <activity android:name=".Info_healthActivity"/>
         <activity android:name=".VertifyActivity"/>
+        <activity android:name=".Detail_HealthActivity"/>
     </application>
 
 </manifest>

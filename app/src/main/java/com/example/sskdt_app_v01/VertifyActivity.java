@@ -31,7 +31,6 @@ public class VertifyActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vertify);
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         callbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -133,3 +132,4 @@ public class VertifyActivity extends AppCompatActivity {
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 }
+
