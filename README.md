@@ -27,7 +27,7 @@
       </tr>
       <tr>
         <td>3</td>
-        <td>Chưa có</td>
+        <td>19437361</td>
         <td>Nguyễn Nhật Quang</td>
         <td>A</td>
         <td></td>
