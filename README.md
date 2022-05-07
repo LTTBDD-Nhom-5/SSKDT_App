@@ -104,7 +104,7 @@
  <ul type="none">
   <li>
       <h5>Giao diện đăng nhập</h5>
-      <img src="./image/screen_log.png" alt="Picture" />
+      <img src="./image/screen_logins.png" alt="Picture" />
   </li>
   <li>
       <h5>Giao diện đăng ký</h5>
