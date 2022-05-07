@@ -64,7 +64,7 @@
 
 
                 <Button
-                    android:id="@+id/btn_change_info3"
+                    android:id="@+id/btn_send_decla"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="40dp"
@@ -77,9 +77,10 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView66" />
 
                 <EditText
-                    android:id="@+id/txt_info_city"
+                    android:id="@+id/txt_decla_city"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
                     android:background="@drawable/background_txt"
                     android:ems="10"
                     android:hint="nhập tỉnh/thành phố"
@@ -87,11 +88,12 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.491"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_email" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_email" />
 
                 <EditText
-                    android:id="@+id/txt_info_ward"
+                    android:id="@+id/txt_decla_ward"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="40dp"
@@ -103,10 +105,10 @@
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_district" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_district" />
 
                 <EditText
-                    android:id="@+id/txt_info_address"
+                    android:id="@+id/txt_decla_address"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="40dp"
@@ -118,7 +120,7 @@
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_ward" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_ward" />
 
                 <TextView
                     android:id="@+id/textView30"
@@ -128,8 +130,8 @@
                     android:text="Thôn / Xóm / Số nhà"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_address"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_address" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_address"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_address" />
 
                 <TextView
                     android:id="@+id/textView29"
@@ -139,8 +141,8 @@
                     android:text="Xã/Phường"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_ward"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_ward" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_ward"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_ward" />
 
                 <TextView
                     android:id="@+id/textView28"
@@ -150,8 +152,8 @@
                     android:text="Tỉnh/Thành Phố"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_city"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_city" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_city"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_city" />
 
                 <TextView
                     android:id="@+id/textView27"
@@ -161,8 +163,8 @@
                     android:text="Email"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_email"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_email" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_email"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_email" />
 
                 <TextView
                     android:id="@+id/textView26"
@@ -172,11 +174,11 @@
                     android:text="Huyện/Quận"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_district"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_district" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_district"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_district" />
 
                 <EditText
-                    android:id="@+id/txt_info_district"
+                    android:id="@+id/txt_decla_district"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="40dp"
@@ -188,10 +190,10 @@
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_city" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_city" />
 
                 <EditText
-                    android:id="@+id/txt_info_email"
+                    android:id="@+id/txt_decla_email"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="40dp"
@@ -203,10 +205,10 @@
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_cccd" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_cccd" />
 
                 <EditText
-                    android:id="@+id/txt_info_cccd"
+                    android:id="@+id/txt_decla_cccd"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="40dp"
@@ -218,10 +220,10 @@
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_phone" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_phone" />
 
                 <EditText
-                    android:id="@+id/txt_info_phone"
+                    android:id="@+id/txt_decla_phone"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="40dp"
@@ -243,8 +245,8 @@
                     android:text="Số điện thoại"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_phone"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_phone" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_phone"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_phone" />
 
                 <TextView
                     android:id="@+id/textView25"
@@ -254,11 +256,11 @@
                     android:text="Số hộ chiếu/CMND/CCCD*"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_cccd"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_cccd" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_cccd"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_cccd" />
 
                 <EditText
-                    android:id="@+id/txt_info_date"
+                    android:id="@+id/txt_decla_date"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="40dp"
@@ -271,10 +273,10 @@
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_name" />
 
                 <EditText
-                    android:id="@+id/txt_info_name"
+                    android:id="@+id/txt_decla_name"
                     android:layout_width="350dp"
                     android:layout_height="57dp"
                     android:layout_marginTop="25dp"
@@ -286,7 +288,7 @@
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+                    app:layout_constraintTop_toBottomOf="@+id/chk_khaiho" />
 
                 <TextView
                     android:id="@+id/textView21"
@@ -296,8 +298,8 @@
                     android:text="Họ và tên"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_name" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_name"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_name" />
 
                 <TextView
                     android:id="@+id/textView22"
@@ -307,8 +309,8 @@
                     android:text="Ngày sinh"
                     android:textColor="#000000"
                     android:textSize="17sp"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_info_date"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_date" />
+                    app:layout_constraintBottom_toTopOf="@+id/txt_decla_date"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_date" />
 
                 <TextView
                     android:id="@+id/textView23"
@@ -329,10 +331,10 @@
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_date">
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_date">
 
                     <RadioButton
-                        android:id="@+id/rad_infor_men"
+                        android:id="@+id/rad_decla_men"
                         android:layout_width="119dp"
                         android:layout_height="match_parent"
                         android:checked="true"
@@ -341,7 +343,7 @@
                         android:textSize="18sp" />
 
                     <RadioButton
-                        android:id="@+id/rad_info_women"
+                        android:id="@+id/rad_decla_women"
                         android:layout_width="117dp"
                         android:layout_height="57dp"
                         android:letterSpacing="0.1"
@@ -349,7 +351,7 @@
                         android:textSize="18sp" />
 
                     <RadioButton
-                        android:id="@+id/rad_info_more"
+                        android:id="@+id/rad_decla_more"
                         android:layout_width="117dp"
                         android:layout_height="57dp"
                         android:letterSpacing="0.1"
@@ -362,14 +364,13 @@
                     android:id="@+id/textView55"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="16dp"
                     android:letterSpacing="0.1"
                     android:text="Thông tin khai báo y tế"
                     android:textColor="#000000"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.519"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -388,12 +389,12 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView55" />
 
                 <CheckBox
-                    android:id="@+id/checkBox2"
+                    android:id="@+id/chk_khaiho"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:text="Khai hộ"
-                    app:layout_constraintStart_toStartOf="@+id/txt_info_name"
+                    app:layout_constraintStart_toStartOf="@+id/txt_decla_name"
                     app:layout_constraintTop_toBottomOf="@+id/textView56" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -404,7 +405,7 @@
                     android:background="@drawable/background_txt"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_info_address">
+                    app:layout_constraintTop_toBottomOf="@+id/txt_decla_address">
 
                     <TextView
                         android:id="@+id/textView58"
@@ -430,7 +431,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView58">
 
                         <RadioButton
-                            android:id="@+id/radioButton10"
+                            android:id="@+id/rad_ans_01_n"
                             android:layout_width="175dp"
                             android:layout_height="57dp"
                             android:letterSpacing="0.1"
@@ -438,7 +439,7 @@
                             android:textSize="18sp" />
 
                         <RadioButton
-                            android:id="@+id/radioButton11"
+                            android:id="@+id/rad_ans_01_y"
                             android:layout_width="175dp"
                             android:layout_height="57dp"
                             android:letterSpacing="0.1"
@@ -482,7 +483,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView59">
 
                         <RadioButton
-                            android:id="@+id/radioButton12"
+                            android:id="@+id/rad_ans_02_n"
                             android:layout_width="175dp"
                             android:layout_height="57dp"
                             android:letterSpacing="0.1"
@@ -490,7 +491,7 @@
                             android:textSize="18sp" />
 
                         <RadioButton
-                            android:id="@+id/radioButton13"
+                            android:id="@+id/rad_ans_02_y"
                             android:layout_width="175dp"
                             android:layout_height="57dp"
                             android:letterSpacing="0.1"
@@ -595,13 +596,13 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <RadioButton
-                                android:id="@+id/radioButton14"
+                                android:id="@+id/rad_ans_03_n"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp" />
 
                             <RadioButton
-                                android:id="@+id/radioButton15"
+                                android:id="@+id/rad_ans_03_y"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="25dp" />
@@ -642,13 +643,13 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <RadioButton
-                                android:id="@+id/radioButton16"
+                                android:id="@+id/rad_ans_04_n"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp" />
 
                             <RadioButton
-                                android:id="@+id/radioButton17"
+                                android:id="@+id/rad_ans_04_y"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="25dp" />
@@ -689,13 +690,13 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <RadioButton
-                                android:id="@+id/radioButton18"
+                                android:id="@+id/rad_ans_05_n"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp" />
 
                             <RadioButton
-                                android:id="@+id/radioButton19"
+                                android:id="@+id/rad_ans_05_y"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="25dp" />

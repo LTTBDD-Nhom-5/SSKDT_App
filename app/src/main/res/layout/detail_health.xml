@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC47A7FB">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:background="#B3FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/qr" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_return_info"
+        android:layout_width="360dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:letterSpacing="0.1"
+            android:text="Thông tin khai báo y tế"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_left" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.1"
+        android:text="QR Code"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="288dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:letterSpacing="0.1"
+        android:text="Dùng mã QR ở trên để check in, check out tại các địa điểm càn thiết"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="460dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_01">
+
+
+            <EditText
+                android:id="@+id/txt_detail_city"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="nhập tỉnh/thành phố"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_detail_email" />
+
+            <EditText
+                android:id="@+id/txt_detail_ward"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="nhập xã/phường"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_info_district" />
+
+            <EditText
+                android:id="@+id/txt_detail_address"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="nhập thôn / xóm / số nhà"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_detail_ward" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Thôn / Xóm / Số nhà"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detail_address"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_address" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Xã/Phường"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detail_ward"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_ward" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Tỉnh/Thành Phố"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detail_city"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_city" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detail_email"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_email" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Huyện/Quận"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_info_district"
+                app:layout_constraintStart_toStartOf="@+id/txt_info_district" />
+
+            <EditText
+                android:id="@+id/txt_info_district"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="nhập quận/huyện"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_detail_city" />
+
+            <EditText
+                android:id="@+id/txt_detail_email"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="nhập email"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_detail_cccd" />
+
+            <EditText
+                android:id="@+id/txt_detail_cccd"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="Nhập số hộ chiếu/CMND/CCCD"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_detail_phone" />
+
+            <EditText
+                android:id="@+id/txt_detail_phone"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="nhập số điện thoại"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Số điện thoại"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detail_phone"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_phone" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Số hộ chiếu/CMND/CCCD*"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detail_cccd"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_cccd" />
+
+            <EditText
+                android:id="@+id/txt_detail_date"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                android:drawableRight="@drawable/calendar_day"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="nhập ngày sinh"
+                android:inputType="date"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_detail_name" />
+
+            <EditText
+                android:id="@+id/txt_detail_name"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/background_txt"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="nhập họ và tên"
+                android:inputType="textPersonName"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chk_detail_khaiho" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Họ và tên"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detail_name"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_name" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Ngày sinh"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detail_date"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_date" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="Giới tính"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+                app:layout_constraintStart_toStartOf="@+id/radioGroup" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="350dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_detail_date">
+
+                <RadioButton
+                    android:id="@+id/rad_detail_men"
+                    android:layout_width="119dp"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:letterSpacing="0.1"
+                    android:text="Nam"
+                    android:enabled="false"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/rad_detail_women"
+                    android:layout_width="117dp"
+                    android:layout_height="57dp"
+                    android:letterSpacing="0.1"
+                    android:text="Nữ"
+                    android:enabled="false"
+                    android:textSize="18sp" />
+
+                <RadioButton
+                    android:id="@+id/rad_detail_more"
+                    android:layout_width="117dp"
+                    android:layout_height="57dp"
+                    android:letterSpacing="0.1"
+                    android:text="Khác"
+                    android:enabled="false"
+                    android:textSize="18sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:letterSpacing="0.1"
+                android:text="Thông tin khai báo y tế"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:text="Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể xử lý hình sự"
+                android:textColor="#FF0000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+            <CheckBox
+                android:id="@+id/chk_detail_khaiho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:enabled="false"
+                android:text="Khai hộ"
+                app:layout_constraintStart_toStartOf="@+id/txt_detail_name"
+                app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/question_01"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_detail_address">
+
+                <TextView
+                    android:id="@+id/textView58"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Trong vòng 14 ngày qua, Anh/Chị có đến tỉnh/thành phố, quốc gia/vùng lãnh thổ nào (Có thể đi qua nhiều nơi)(*)"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView58">
+
+                    <RadioButton
+                        android:id="@+id/rad_que_01_n"
+                        android:layout_width="175dp"
+                        android:layout_height="57dp"
+                        android:letterSpacing="0.1"
+                        android:enabled="false"
+                        android:text="Không"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rad_que_01_y"
+                        android:layout_width="175dp"
+                        android:layout_height="57dp"
+                        android:letterSpacing="0.1"
+                        android:enabled="false"
+                        android:text="Có"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/question_02"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_01">
+
+                <TextView
+                    android:id="@+id/textView59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Trong vòng 14 ngày qua, Anh/Chị có thấy xuất hiện ít nhất 1 trong các dấu hiệu: sốt, ho, khó thở, viêm phổi, đau họng, mệt mỏi không(*)"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView59">
+
+                    <RadioButton
+                        android:id="@+id/rad_que_02_n"
+                        android:layout_width="175dp"
+                        android:layout_height="57dp"
+                        android:letterSpacing="0.1"
+                        android:text="Không"
+                        android:enabled="false"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rad_que_02_y"
+                        android:layout_width="175dp"
+                        android:layout_height="57dp"
+                        android:letterSpacing="0.1"
+                        android:text="Có"
+                        android:enabled="false"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/question_03"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_02">
+
+                <TextView
+                    android:id="@+id/textView60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Trong vòng 14 ngày qua, Anh/Chị có tiếp xúc với(*)"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con_yes_no"
+                    android:layout_width="380dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#47A7FB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView60">
+
+                    <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="25dp"
+                        android:letterSpacing="0.1"
+                        android:text="Không"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/textView62"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView62"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:letterSpacing="0.1"
+                        android:text="Có"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con_question_01"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/con_yes_no">
+
+                    <TextView
+                        android:id="@+id/textView63"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="15dp"
+                        android:text="Người bệnh nghi ngờ mắc bệnh COVID-19 (*)"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rad_que_03_n"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:layout_marginLeft="20dp" />
+
+                        <RadioButton
+                            android:id="@+id/rad_que_03_y"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:layout_marginLeft="25dp" />
+                    </RadioGroup>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con_question_02"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:background="#EEF1F8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/con_question_01">
+
+                    <TextView
+                        android:id="@+id/textView64"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="15dp"
+                        android:text="Người từ nước có bệnh COVID-19 (*)"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rad_que_04_n"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:layout_marginLeft="20dp" />
+
+                        <RadioButton
+                            android:id="@+id/rad_que_04_y"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:layout_marginLeft="25dp" />
+                    </RadioGroup>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/con_question_03"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/con_question_02">
+
+                    <TextView
+                        android:id="@+id/textView65"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="15dp"
+                        android:text="Người có biêu hiện (Sốt, ho, khó thở, viêm phổi) (*)"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:layout_width="130dp"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/rad_que_05_n"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:layout_marginLeft="20dp" />
+
+                        <RadioButton
+                            android:id="@+id/rad_que_05_y"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:layout_marginLeft="25dp" />
+                    </RadioGroup>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="350dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:letterSpacing="0.1"
+                android:text="Dữ liệu bạn cung cấp hoàn toàn là bảo mật và chỉ phục vụ cho việc phòng chống dịch, thuộc quản lý của Ban chỉ đạo quốc gia về phòng chống dịch Covid-19. Khi bạn nhấn nút Gửi là bạn đã hiểu và đồng ý."
+                android:textColor="#000000"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question_03" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
