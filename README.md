@@ -112,6 +112,34 @@
   </li>
   <li>
       <h5>Giao diện thay đổi mật khẩu</h5>
-      <img src="./image/forgotpassword_screen.png" alt="Picture" />
+      <img src="./image/changepass_screen.png" alt="Picture" />
+  </li>
+    <li>
+      <h5>Giao diện xác thực</h5>
+      <img src="./image/auth_screen.png" alt="Picture" />
+  </li>
+   <li>
+      <h5>Giao diện trang chủ</h5>
+      <img src="./image/home_screen.png" alt="Picture" />
+  </li>
+   <li>
+      <h5>Giao diện cá nhân </h5>
+      <img src="./image/user_screen.png" alt="Picture" />
+  </li>
+   <li>
+      <h5>Giao diện thông tin cá nhân</h5>
+      <img src="./image/infor_user_screen.png" alt="Picture" />
+  </li>
+   <li>
+      <h5>Giao diện khai báo y tế</h5>
+      <img src="./image/infor_health_screen.png" alt="Picture" />
+  </li>
+   <li>
+      <h5>Giao diện hoàn thành khai báo</h5>
+      <img src="./image/done_screen.png" alt="Picture" />
+  </li>
+    <li>
+      <h5>Giao diện danh sách thông tin khai báo</h5>
+      <img src="./image/list_screen.png" alt="Picture" />
   </li>
  </ul>
