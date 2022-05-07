@@ -13,7 +13,7 @@
 <!--            android:name=".ListHealthDeclarationActivity"-->
 <!--            android:exported="true" />-->
         <activity
-            android:name=".ListHealthDeclarationActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,8 @@
         <activity android:name=".registerActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".ForgotPasswordActivity"/>
+        <activity android:name=".InfoUserActivity" />
+        <activity android:name=".ListHealthDeclarationActivity"/>
     </application>
 
 </manifest>

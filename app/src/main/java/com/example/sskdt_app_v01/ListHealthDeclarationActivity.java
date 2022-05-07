@@ -2,9 +2,12 @@ package com.example.sskdt_app_v01;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import com.example.sskdt_app_v01.adapter.GridAdapterHome;
@@ -107,5 +110,14 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
 
         ListLAdapterSKBYT adapter = new ListLAdapterSKBYT(itemLSKBYTs, this);
         listView.setAdapter(adapter);
+
+        ConstraintLayout btn_return_lichsu = findViewById(R.id.btn_return_lichsu);
+        btn_return_lichsu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ListHealthDeclarationActivity.this , HomeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

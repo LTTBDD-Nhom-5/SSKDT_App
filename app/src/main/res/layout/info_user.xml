@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="412dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#CC47A7FB">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/btn_return_info"
         android:layout_width="360dp"
         android:layout_height="34dp"
         android:layout_marginTop="1dp"
@@ -45,32 +45,363 @@
         android:layout_marginTop="1dp"
         android:background="@drawable/background_01"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/btn_return_info">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="25dp"
-            android:background="@color/selecter_navigation"
+        <ScrollView
+            android:layout_width="412dp"
+            android:layout_height="691dp"
+            android:layout_marginTop="40dp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck">
 
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="149dp"
-                android:layout_height="146dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginBottom="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_user_circle_1" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="700dp">
+
+                <Button
+                    android:id="@+id/btn_change_info"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/background_btn"
+                    android:text="Lưu thông tin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name9" />
+
+                <EditText
+                    android:id="@+id/txt_info_name7"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:ems="10"
+                    android:hint="nhập tỉnh/thành phố"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name5" />
+
+                <EditText
+                    android:id="@+id/txt_info_name8"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:ems="10"
+                    android:hint="nhập xã/phường"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name6" />
+
+                <EditText
+                    android:id="@+id/txt_info_name9"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:ems="10"
+                    android:hint="nhập thôn / xóm / số nhà"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name8" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Thôn / Xóm / Số nhà"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name9"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name9" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Xã/Phường"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name8"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name8" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Tỉnh/Thành Phố"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name7"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name7" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Email"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name5"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name5" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Huyện/Quận"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name6"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name6" />
+
+                <EditText
+                    android:id="@+id/txt_info_name6"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:ems="10"
+                    android:hint="nhập quận/huyện"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name7" />
+
+                <EditText
+                    android:id="@+id/txt_info_name5"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:ems="10"
+                    android:hint="nhập email"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name4" />
+
+                <EditText
+                    android:id="@+id/txt_info_name4"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:ems="10"
+                    android:hint="Nhập số hộ chiếu/CMND/CCCD"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name3" />
+
+                <EditText
+                    android:id="@+id/txt_info_name3"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:ems="10"
+                    android:hint="nhập số điện thoại"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Số điện thoại"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name3"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name3" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Số hộ chiếu/CMND/CCCD*"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name4"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name4" />
+
+                <EditText
+                    android:id="@+id/txt_info_name2"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:drawableRight="@drawable/calendar_day"
+                    android:ems="10"
+                    android:hint="nhập ngày sinh"
+                    android:inputType="date"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name" />
+
+                <EditText
+                    android:id="@+id/txt_info_name"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/background_txt"
+                    android:ems="10"
+                    android:hint="nhập họ và tên"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Họ và tên"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Ngày sinh"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_info_name2"
+                    app:layout_constraintStart_toStartOf="@+id/txt_info_name2" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.1"
+                    android:text="Giới tính"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+                    app:layout_constraintStart_toStartOf="@+id/radioGroup" />
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_user_circle_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </ImageView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_02"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView14">
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/camera_01" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="350dp"
+                    android:layout_height="57dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_info_name2">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RadioButton
+                            android:id="@+id/radioButton7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nữ"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/radioButton6"
+                            app:layout_constraintStart_toEndOf="@+id/radioButton5"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.444" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Khác"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.444" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Nam"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
