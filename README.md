@@ -20,7 +20,7 @@
       </tr>
       <tr>
         <td>2</td>
-        <td>Chưa có</td>
+        <td>19530291</td>
         <td>Nguyễn Quý Khả</td>
         <td>A</td>
         <td></td>
