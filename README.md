@@ -35,7 +35,7 @@
    </tbody>
  </table>
 
-<h5><b>Bảng đánh giá:</b></h5>
+<h5><b>Bảng đánh giá: cập nhật tình trạng mới nhất lúc 18h ngày 09/05/2022</b></h5>
 <table>
   <thead>
      <th>
