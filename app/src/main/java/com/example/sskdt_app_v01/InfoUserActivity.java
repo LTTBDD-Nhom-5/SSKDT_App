@@ -18,6 +18,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -67,12 +68,24 @@ public class InfoUserActivity extends AppCompatActivity {
             progressDialog.show();
 
             storageRef = storage.getReference("images/" + UUID.randomUUID());
+
             storageRef.putFile(imageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressDialog.dismiss();
                             Log.d("TAG", "onSuccess: upload success" );
+                            try {
+                                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+                                imgUser.setImageBitmap(bitmap);
+                                String URL_Image = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
+                                Log.d("TAG", "URL_Image: "+ storageRef.getPath());
+
+                            }
+                            catch (IOException e)
+                            {
+                                e.printStackTrace();
+                            }
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -107,14 +120,7 @@ public class InfoUserActivity extends AppCompatActivity {
         if (requestCode == 100 && data != null && data.getData() != null) {
             imageUri = data.getData();
             uploadImage();
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-                imgUser.setImageBitmap(bitmap);
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
+
         }
     }
 }
