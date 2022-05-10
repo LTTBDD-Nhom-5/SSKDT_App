@@ -286,7 +286,7 @@
                     android:paddingRight="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+                    app:layout_constraintTop_toBottomOf="@+id/info_user_image" />
 
                 <TextView
                     android:id="@+id/textView21"
@@ -322,7 +322,7 @@
                     app:layout_constraintStart_toStartOf="@+id/radioGroup" />
 
                 <ImageView
-                    android:id="@+id/imageView14"
+                    android:id="@+id/info_user_image"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
                     android:layout_marginTop="20dp"
@@ -337,8 +337,8 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="@drawable/background_circle_02"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView14">
+                    app:layout_constraintBottom_toBottomOf="@+id/info_user_image"
+                    app:layout_constraintEnd_toEndOf="@+id/info_user_image">
 
                     <ImageView
                         android:id="@+id/imageView15"
