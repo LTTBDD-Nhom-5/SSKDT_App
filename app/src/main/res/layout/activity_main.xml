@@ -171,7 +171,7 @@
                 app:srcCompat="@drawable/user_01" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/image_ca_nhan_fragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -190,7 +190,7 @@
                 android:inputType="number"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintStart_toEndOf="@+id/image_ca_nhan_fragment"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.444" />
 

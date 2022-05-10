@@ -35,7 +35,7 @@
    </tbody>
  </table>
 
-<h5><b>Bảng đánh giá:</b></h5>
+<h5><b>Bảng đánh giá: cập nhật tình trạng mới nhất lúc 18h ngày 09/05/2022</b></h5>
 <table>
   <thead>
      <th>
@@ -49,7 +49,7 @@
         <td>1</td>
         <td>Thiết kế giao diện bằng figma</td>
         <td>100%</td>
-        <td>10 screen</td>
+        <td>11 screen</td>
       </tr>
       <tr>
         <td>2</td>
@@ -73,7 +73,7 @@
         <td>5</td>
         <td>Đồng bộ dữ liệu SQLite vs firebase</td>
         <td>0%</td>
-        <td>Team sử dụng toàn bộ bằng firebase</td>
+        <td>Team sử dụng toàn bộ bằng fireStore firebase</td>
       </tr>
       <tr>
         <td>6</td>

@@ -1,5 +1,6 @@
 package com.example.sskdt_app_v01.fragment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -28,7 +30,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class CaNhanFragment extends Fragment {
@@ -37,6 +44,10 @@ public class CaNhanFragment extends Fragment {
     ListView listView;
     private TextView name,tel;
     private String doc;
+
+//     StorageReference storageReference;
+//     ImageView imageView;
+
     ArrayList<ItemUser> itemUsers;
     @Nullable
     @Override
@@ -68,6 +79,18 @@ public class CaNhanFragment extends Fragment {
                         }
                     }
                 });
+
+
+//         imageView = view.findViewById(R.id.image_ca_nhan_fragment);
+
+
+//         ProgressDialog progressDialog = new ProgressDialog(view.getContext());
+//         progressDialog.setMessage("Loading image ...");
+//         progressDialog.setCancelable(false);
+//         progressDialog.show();
+
+//         storageReference = FirebaseStorage.
+
 
         itemUsers = new ArrayList<ItemUser>();
         itemUsers.add(new ItemUser(R.drawable.ic_user_person, "Thông tin cá nhân"));
