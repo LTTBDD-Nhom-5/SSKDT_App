@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.common.base.Joiner;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txt_login_phone, txt_login_password;
     private FirebaseAuth mAuth;
     private ImageButton btnshow;
+    String Userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,11 +119,28 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
         if(currentUser != null){
-            Intent intent = new Intent(MainActivity.this,HomeActivity.class);
-            intent.putExtra("phone", currentUser.getPhoneNumber());
-            Log.d("TAG", " Số điện thoại: " + currentUser.getPhoneNumber());
-            startActivity(intent);
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            db.collection("Users")
+                    .whereEqualTo("phone",currentUser.getPhoneNumber())
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                                    intent.putExtra("uid",document.getId().toString());
+                                    startActivity(intent);
+                                    Log.d("TAG", "uid: " + document.getId().toString());
+                                    break;
+                                }
+                            } else {
+                                Log.d("TAG", "Error getting documents: ", task.getException());
+                            }
+                        }
+                    });
         }
     }
 
