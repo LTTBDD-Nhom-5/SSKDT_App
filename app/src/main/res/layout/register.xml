@@ -16,20 +16,19 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView6">
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/txt_register_re_password"
             android:layout_width="350dp"
             android:layout_height="57dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/background_txt"
-            android:drawableRight="@drawable/eye"
             android:ems="10"
             android:hint="nhập lại mật khẩu"
             android:inputType="textPassword"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingRight="55dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_password" />
 
         <TextView
             android:id="@+id/textView8"
@@ -39,8 +38,8 @@
             android:text="Mật khẩu"
             android:textColor="#000000"
             android:textSize="17sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPassword" />
+            app:layout_constraintBottom_toTopOf="@+id/txt_register_password"
+            app:layout_constraintStart_toStartOf="@+id/txt_register_password" />
 
         <EditText
             android:id="@+id/txt_register_phone"
@@ -50,7 +49,7 @@
             android:background="@drawable/background_txt"
             android:ems="10"
             android:hint="nhập số điện thoại"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -82,7 +81,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/canhan_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="0.1"
@@ -100,19 +99,19 @@
             android:text="Xác nhận mật khẩu"
             android:textColor="#000000"
             android:textSize="17sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2" />
+            app:layout_constraintBottom_toTopOf="@+id/txt_register_re_password"
+            app:layout_constraintStart_toStartOf="@+id/txt_register_re_password" />
 
         <Button
             android:id="@+id/btn_register"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/background_btn"
             android:text="Đăng ký"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_re_password" />
 
         <TextView
             android:id="@+id/btn_return_login"
@@ -143,20 +142,51 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/txt_register_password"
             android:layout_width="350dp"
             android:layout_height="57dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/background_txt"
-            android:drawableRight="@drawable/eye"
             android:ems="10"
             android:hint="nhập mật khẩu"
             android:inputType="textPassword"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingRight="55dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_register_phone" />
+
+        <TextView
+            android:id="@+id/txt_register_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_register_re_password"
+            app:layout_constraintTop_toBottomOf="@+id/txt_register_re_password" />
+
+        <ImageButton
+            android:id="@+id/btn_eye_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_register_password"
+            app:layout_constraintEnd_toEndOf="@+id/txt_register_password"
+            app:layout_constraintTop_toTopOf="@+id/txt_register_password"
+            app:layout_constraintVertical_bias="0.535"
+            app:srcCompat="@drawable/eye" />
+
+        <ImageButton
+            android:id="@+id/btn_eye_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_register_re_password"
+            app:layout_constraintEnd_toEndOf="@+id/txt_register_re_password"
+            app:layout_constraintTop_toTopOf="@+id/txt_register_re_password"
+            app:srcCompat="@drawable/eye" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

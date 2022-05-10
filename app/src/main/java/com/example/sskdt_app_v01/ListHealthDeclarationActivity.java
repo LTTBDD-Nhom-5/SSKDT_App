@@ -42,22 +42,22 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_health_declaration);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        HealthDeclaration healthDeclaration = new HealthDeclaration("2GscXtFxm7Z1C3UvjaER", "2GscXtFxm7Z1C3UvjaER", new Date(), true, false, true,false,true);
-        db.collection("HealthDeclarations") //add
-                .add(healthDeclaration)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("TAG", "Error adding document", e);
-                    }
-                });
+//        FirebaseFirestore db = FirebaseFirestore.getInstance();
+//        HealthDeclaration healthDeclaration = new HealthDeclaration("2GscXtFxm7Z1C3UvjaER", "2GscXtFxm7Z1C3UvjaER", new Date(), true, false, true,false,true);
+//        db.collection("HealthDeclarations") //add
+//                .add(healthDeclaration)
+//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                    @Override
+//                    public void onSuccess(DocumentReference documentReference) {
+//                        Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.w("TAG", "Error adding document", e);
+//                    }
+//                });
 //          //getList
 //        db.collection("HealthDeclarations")
 //                .get()
@@ -74,7 +74,9 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
 //                    }
 //                });
 //          //get by ducument
-//        db.collection("HealthDeclarations").document("xghyhv0rRFGUxB6C6CkO").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//        db.collection("HealthDeclarations").document("xghyhv0rRFGUxB6C6CkO")
+//              .get()
+//              .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
 //            @Override
 //            public void onSuccess(DocumentSnapshot documentSnapshot) {
 ////                SimpleDateFormat sfd = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -83,6 +85,7 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
 //                Log.d("TAG", "onSuccess: "+ documentSnapshot.getDate("timestamp").getHours());
 //            }
 //        });
+
 //          //update
 //        db.collection("HealthDeclarations")
 //                .document("xghyhv0rRFGUxB6C6CkO")

@@ -3,8 +3,8 @@ package com.example.sskdt_app_v01.model;
 import java.util.Date;
 
 public class HealthDeclaration {
-    private String userDocument;
-    private String user_decleared_document;
+    private String userDocument;// userCreate
+    private String user_decleared_document;//bỏ
     private Date create_at;
     private boolean ans_01;
     private boolean ans_02;

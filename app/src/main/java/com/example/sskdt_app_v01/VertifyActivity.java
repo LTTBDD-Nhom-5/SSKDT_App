@@ -1,5 +1,6 @@
 package com.example.sskdt_app_v01;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sskdt_app_v01.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseException;
@@ -19,8 +21,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Pattern;
 
 public class VertifyActivity extends AppCompatActivity {
     private PhoneAuthProvider.ForceResendingToken token;
@@ -50,8 +55,6 @@ public class VertifyActivity extends AppCompatActivity {
                 super.onCodeSent(verityId, forceResendingToken);
                 vertifiedId = verityId;
                 token = forceResendingToken;
-
-
             }
 
             @Override
@@ -67,20 +70,26 @@ public class VertifyActivity extends AppCompatActivity {
             if(extras == null) {
                 phone= null;
             } else {
-                phone= extras.getString("phone");
+                phone= extras.getString("phoneRegister");
             }
         } else {
-            phone= (String) savedInstanceState.getSerializable("phone");
+            phone= (String) savedInstanceState.getSerializable("phoneRegister");
         }
 
         phoneVertification(phone);
         Button btnVerity = findViewById(R.id.btn_verity);
         EditText edtVerity = findViewById(R.id.verity_code);
+        TextView note = findViewById(R.id.txt_vertify_note);
         btnVerity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PhoneAuthCredential credential = PhoneAuthProvider.getCredential(vertifiedId, edtVerity.getText().toString());
-                signInWithAuthCredential(credential);
+                if(!Pattern.matches("[0-9]{6}",edtVerity.getText().toString())){
+                    note.setText("* Mã xác thực không hợp lệ");
+                }else{
+                    note.setText("");
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(vertifiedId, edtVerity.getText().toString());
+                    signInWithAuthCredential(credential);
+                }
             }
         });
         TextView txtResendVerity = findViewById(R.id.txt_resend);
@@ -97,7 +106,28 @@ public class VertifyActivity extends AppCompatActivity {
         firebaseAuth.signInWithCredential(phoneAuthCredential).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
+
                 Log.d("TAG", "onSuccess: is login");
+                Bundle extras = getIntent().getExtras();
+                User user = new User(extras.getString("nameRegister"), extras.getString("phoneRegister"), extras.getString("passwordRegister"));
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                db.collection("Users") //add
+                        .add(user)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                Intent intent = new Intent(VertifyActivity.this, HomeActivity.class);
+                                intent.putExtra("uid", documentReference.getId());
+                                startActivity(intent);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("TAG", "Error adding document", e);
+                            }
+                        });
             }
 
         }).addOnFailureListener(new OnFailureListener() {
