@@ -74,7 +74,9 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
 //                    }
 //                });
 //          //get by ducument
-//        db.collection("HealthDeclarations").document("xghyhv0rRFGUxB6C6CkO").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//        db.collection("HealthDeclarations").document("xghyhv0rRFGUxB6C6CkO")
+//              .get()
+//              .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
 //            @Override
 //            public void onSuccess(DocumentSnapshot documentSnapshot) {
 ////                SimpleDateFormat sfd = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -83,6 +85,7 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
 //                Log.d("TAG", "onSuccess: "+ documentSnapshot.getDate("timestamp").getHours());
 //            }
 //        });
+
 //          //update
 //        db.collection("HealthDeclarations")
 //                .document("xghyhv0rRFGUxB6C6CkO")

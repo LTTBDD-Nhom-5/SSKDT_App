@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -16,9 +18,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -32,14 +38,46 @@ public class InfoUserActivity extends AppCompatActivity {
     Uri imageUri;
     FirebaseStorage storage;
     StorageReference storageRef;
+    private FirebaseAuth mAuth;
+    private EditText name,date,tel,cccd,emai,city,ward, district, address;
+    private CheckBox nam, nu;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_user);
+        mAuth = FirebaseAuth.getInstance();
         ConstraintLayout btn_return_info =  findViewById(R.id.btn_return_info);
+
+        name = findViewById(R.id.txt_info_name);
+        tel = findViewById(R.id.txt_info_phone);
+        Bundle bundle = getIntent().getExtras();
+        String doc =  bundle.getString("uid");
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("Users").document(doc).get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d("TAG", "DocumentSnapshot data: " + document.getData());
+                        name.setText(document.getString("name"));
+                        tel.setText("0"+document.getString("phone").substring(3));
+                    } else {
+                        Log.d("TAG", "No such document");
+                    }
+                } else {
+                    Log.d("TAG", "get failed with ", task.getException());
+                }
+            }
+        });
+
 
         storage = FirebaseStorage.getInstance();
         imgUser = findViewById(R.id.info_user_image);
+
 
         btn_return_info.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +97,6 @@ public class InfoUserActivity extends AppCompatActivity {
     }
 
     private void uploadImage() {
-        Log.d("TAG", "uploadImage: aaaaaaaaaaaaaaaaaaaaaaaaaaa");
         if(imageUri != null)
         {
             Log.d("TAG", "uploadImage: begin upload");

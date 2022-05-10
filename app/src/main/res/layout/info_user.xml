@@ -227,6 +227,7 @@
                     android:layout_marginTop="40dp"
                     android:background="@drawable/background_txt"
                     android:ems="10"
+                    android:enabled="false"
                     android:hint="nhập số điện thoại"
                     android:inputType="textPersonName"
                     android:paddingLeft="20dp"
@@ -376,15 +377,8 @@
                         android:text="Nữ"
                         android:textSize="16sp" />
 
-                    <RadioButton
-                        android:id="@+id/rad_info_more"
-                        android:layout_width="117dp"
-                        android:layout_height="57dp"
-                        android:text="Khác"
-                        android:textSize="16sp" />
 
-
-                   </RadioGroup>
+                </RadioGroup>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
