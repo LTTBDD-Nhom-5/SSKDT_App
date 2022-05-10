@@ -31,6 +31,18 @@ public class User {
         this.password = password;
     }
 
+    public User(String name, Date birthday, boolean gender, String identification, String email, String city, String district, String ward, String address) {
+        this.name = name;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.identification = identification;
+        this.email = email;
+        this.city = city;
+        this.district = district;
+        this.ward = ward;
+        this.address = address;
+    }
+
     public User(String name, String phone, String password) {
         this.name = name;
         this.phone = phone;
