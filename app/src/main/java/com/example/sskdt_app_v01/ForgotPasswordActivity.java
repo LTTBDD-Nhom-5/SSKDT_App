@@ -94,7 +94,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                                                 document.getString("city"),
                                                 document.getString("district"),
                                                 document.getString("ward"),
-                                                document.getString("address"), null, document.getString("password") );
+                                                document.getString("address"), document.getString("image"), document.getString("password") );
                                         if(old_pass.equals(u.getPassword())){
                                             u.setPassword(new_pass);
                                             db.collection("Users").document(doc).set(u);
