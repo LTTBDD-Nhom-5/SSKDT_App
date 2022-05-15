@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -29,16 +30,18 @@ public class Detail_HealthActivity extends AppCompatActivity {
     private EditText district;
     private EditText ward;
     private EditText address;
-    private String editHealthId;
+    private String editHealthId, doc;
     private ImageButton btnDelete;
+    private ConstraintLayout btn_return_info;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_health);
-
         mapping();
+        btn_return_info = findViewById(R.id.btn_return_info);
+
 
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
@@ -46,6 +49,7 @@ public class Detail_HealthActivity extends AppCompatActivity {
                 editHealthId = null;
             } else {
                 editHealthId = extras.getString("HealthDeclar");
+                doc = extras.getString("uid");
             }
         } else {
             editHealthId = (String) savedInstanceState.getSerializable("HealthDeclar");
@@ -106,9 +110,18 @@ public class Detail_HealthActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void unused) {
                                 Intent intent = new Intent(Detail_HealthActivity.this, ListHealthDeclarationActivity.class);
+                                intent.putExtra("uid",doc);
                                 startActivity(intent);
                             }
                         });
+            }
+        });
+        btn_return_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Detail_HealthActivity.this, ListHealthDeclarationActivity.class);
+                intent.putExtra("uid",doc);
+                startActivity(intent);
             }
         });
     }

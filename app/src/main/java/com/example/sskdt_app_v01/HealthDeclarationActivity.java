@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
@@ -16,12 +17,16 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.sskdt_app_v01.model.HealthDeclaration;
 import com.example.sskdt_app_v01.model.User;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -32,6 +37,8 @@ public class HealthDeclarationActivity extends AppCompatActivity {
     private RadioButton men, women, another, ans1, ans2,ans3,ans4, ans5;
     private FirebaseAuth mAuth;
     private Button btn_send_declaration;
+    private CheckBox chk_khaiho;
+    private String doc;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +47,8 @@ public class HealthDeclarationActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        chk_khaiho = findViewById(R.id.chk_khaiho);
 
         name = findViewById(R.id.txt_decla_name);
         birth = findViewById(R.id.txt_decla_date);
@@ -63,12 +72,36 @@ public class HealthDeclarationActivity extends AppCompatActivity {
         btn_send_declaration = findViewById(R.id.btn_send_decla);
 
         Bundle bundle = getIntent().getExtras();
-        String doc =  bundle.getString("uid");
+        doc =  bundle.getString("uid");
+
+        autoField();
+
+        chk_khaiho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(chk_khaiho.isChecked()){
+                    phone.setEnabled(true);
+                    name.setText("");
+                    phone.setText("");
+                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                    birth.setText("");
+                    men.setChecked(true);
+                    identification.setText("");
+                    email.setText("");
+                    city.setText("");
+                    ward.setText("");
+                    district.setText("");
+                    address.setText("");
+                }else
+                    autoField();
+            }
+        });
 
         btn_return_healthdeclaraton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HealthDeclarationActivity.this, HomeActivity.class);
+                intent.putExtra("uid",doc);
                 startActivity(intent);
             }
         });
@@ -109,6 +142,10 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+
+                        Intent intent = new Intent(HealthDeclarationActivity.this,Info_healthActivity.class);
+                        intent.putExtra("uid",doc);
+                        startActivity(intent);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -117,11 +154,42 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                         Log.w("TAG", "Error adding document", e);
                     }
                 });
-
-                Intent intent = new Intent(HealthDeclarationActivity.this,HomeActivity.class);
-                intent.putExtra("uid",doc);
-                startActivity(intent);
             }
         });
+
     }
+    public void autoField(){
+        phone.setEnabled(false);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("Users").document(doc).get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                Log.d("TAG", "DocumentSnapshot data: " + document.getData());
+                                name.setText(document.getString("name"));
+                                phone.setText("0"+document.getString("phone").substring(3));
+                                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                                birth.setText(document.getDate("birthday") == null ? "" : dateFormat.format(document.getDate("birthday")));
+                                if(document.getBoolean("gender"))
+                                    women.setChecked(true) ;
+                                else men.setChecked(true);
+                                identification.setText(document.getString("identification") == null ? "" : document.getString("identification") );
+                                email.setText(document.getString("email") == null ? "" : document.getString("email") );
+                                city.setText(document.getString("city") == null ? "" : document.getString("city") );
+                                ward.setText(document.getString("ward") == null ? "" : document.getString("ward") );
+                                district.setText(document.getString("district") == null ? "" : document.getString("district") );
+                                address.setText(document.getString("address") == null ? "" : document.getString("address") );
+                            } else {
+                                Log.d("TAG", "No such document");
+                            }
+                        } else {
+                            Log.d("TAG", "get failed with ", task.getException());
+                        }
+                    }
+                });
+    }
+
 }

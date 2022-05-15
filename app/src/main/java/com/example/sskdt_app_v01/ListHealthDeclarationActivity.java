@@ -187,11 +187,13 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
                                 Intent intentEdit = new Intent(ListHealthDeclarationActivity.this , HealthDeclarationActivity.class);
                                 intentEdit.putExtra("HealthDeclar", itemLSKBYTs.get(position).getId());
                                 intentEdit.putExtra("editMode", true);
+                                intentEdit.putExtra("uid",uid);
                                 startActivity(intentEdit);
                                 return true;
                             case R.id.show_detail_declar:
                                 Intent intentShowDetail = new Intent(ListHealthDeclarationActivity.this , Detail_HealthActivity.class);
                                 intentShowDetail.putExtra("HealthDeclar", itemLSKBYTs.get(position).getId());
+                                intentShowDetail.putExtra("uid",uid);
                                 startActivity(intentShowDetail);
                         }
                         return true;
@@ -206,6 +208,7 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ListHealthDeclarationActivity.this , HomeActivity.class);
+                intent.putExtra("uid",uid);
                 startActivity(intent);
             }
         });
