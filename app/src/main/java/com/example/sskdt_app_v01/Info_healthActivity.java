@@ -29,4 +29,3 @@ public class Info_healthActivity extends AppCompatActivity {
         
     }
 }
-`
