@@ -29,7 +29,6 @@ import java.util.Locale;
 
 public class HealthDeclarationActivity extends AppCompatActivity {
     private EditText name,birth,phone,identification, email, city, district, ward, address;
-    private Date date_created;
     private RadioButton men, women, another, ans1, ans2,ans3,ans4, ans5;
     private FirebaseAuth mAuth;
     private Button btn_send_declaration;
@@ -94,7 +93,7 @@ public class HealthDeclarationActivity extends AppCompatActivity {
 
 
                 HealthDeclaration declarationRef =new HealthDeclaration( doc.toString().trim() ,
-                        name.getText().toString().trim().toUpperCase(),birthRef,gernderRef,
+                        name.getText().toString().trim().toUpperCase(),birthRef,gernderRef,                                                                       
                         phone.getText().toString().trim(),
                         identification.getText().toString().trim(),
                         email.getText().toString().trim(),
@@ -104,6 +103,7 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                         address.getText().toString(),new Date(), ans1Ref,
                         ans2Ref, ans3Ref, ans4Ref,ans5Ref
                         );
+
                 db.collection("HealthDeclarations").add(declarationRef)
                   .addOnSuccessListener(new OnSuccessListener<DocumentReference>(){
                     @Override
@@ -117,6 +117,7 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                         Log.w("TAG", "Error adding document", e);
                     }
                 });
+
                 Intent intent = new Intent(HealthDeclarationActivity.this,HomeActivity.class);
                 intent.putExtra("uid",doc);
                 startActivity(intent);
