@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/trang_chu_avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -29,8 +29,8 @@
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/trang_chu_avatar"
+        app:layout_constraintTop_toTopOf="@+id/trang_chu_avatar" />
 
     <TextView
         android:id="@+id/textView2"
@@ -44,7 +44,7 @@
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/trang_chu_avatar"
         app:layout_constraintTop_toBottomOf="@+id/main_title" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -54,7 +54,7 @@
         android:background="@drawable/background_01"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/trang_chu_avatar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout_02"

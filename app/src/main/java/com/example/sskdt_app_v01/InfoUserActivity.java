@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.sskdt_app_v01.adapter.TransformCircle;
 import com.example.sskdt_app_v01.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -33,12 +34,15 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class InfoUserActivity extends AppCompatActivity {
@@ -51,6 +55,7 @@ public class InfoUserActivity extends AppCompatActivity {
     private RadioButton nam, nu;
     private Button btn_change_info;
     private String pass, tell;
+    private ImageView avatar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +73,7 @@ public class InfoUserActivity extends AppCompatActivity {
         ward = findViewById(R.id.txt_info_ward);
         district = findViewById(R.id.txt_info_district);
         address = findViewById(R.id.txt_info_address);
+        avatar = findViewById(R.id.info_user_image);
 
         nam = findViewById(R.id.rad_infor_men);
         nu = findViewById(R.id.rad_info_women);
@@ -103,6 +109,15 @@ public class InfoUserActivity extends AppCompatActivity {
                         ward.setText(document.getString("ward") == null ? "" : document.getString("ward") );
                         district.setText(document.getString("district") == null ? "" : document.getString("district") );
                         address.setText(document.getString("address") == null ? "" : document.getString("address") );
+                        if (!document.getString("image").equals("")) {
+                            Picasso.with(getApplicationContext())
+                                    .load(document.getString("image"))
+                                    .placeholder(R.drawable.ic_user_circle_1)
+                                    .transform(new TransformCircle())
+                                    .into(avatar);
+                        } else {
+                            avatar.setImageResource((R.drawable.ic_user_circle_1));
+                        }
 
                     } else {
                         Log.d("TAG", "No such document");
@@ -182,8 +197,21 @@ public class InfoUserActivity extends AppCompatActivity {
                             try {
                                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                                 imgUser.setImageBitmap(bitmap);
-                                String URL_Image = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
-                                Log.d("TAG", "URL_Image: "+ storageRef.getPath());
+                                storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        Uri downloadUrl = uri;
+                                        Log.d("TAG", "onSuccess: " + downloadUrl.toString());
+                                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                        Bundle bundle = getIntent().getExtras();
+                                        String doc =  bundle.getString("uid");
+                                        Map<String, Object > map = new HashMap<String, Object>();
+                                        map.put("image", downloadUrl.toString());
+                                        db.collection("Users")
+                                                .document(doc)
+                                                .update(map);
+                                    }
+                                });
 
                             }
                             catch (IOException e)
@@ -207,6 +235,7 @@ public class InfoUserActivity extends AppCompatActivity {
                             progressDialog.setMessage("Uploaded "+(int)progress+"%");
                         }
                     });
+
         }
     }
 

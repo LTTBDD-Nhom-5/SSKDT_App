@@ -11,7 +11,7 @@
         tools:context=".fragment.TrangChuFragment">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/trang_chu_avatar"
             android:layout_width="77dp"
             android:layout_height="77dp"
             android:layout_marginStart="25dp"
@@ -29,7 +29,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="64dp"
             android:text="Xin chào,"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toEndOf="@+id/trang_chu_avatar"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_marginTop="38dp"
             android:background="@drawable/ic_background_icon_header_home_1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toBottomOf="@+id/trang_chu_avatar">
 
             <ImageView
                 android:id="@+id/imageView2"

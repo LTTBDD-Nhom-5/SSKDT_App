@@ -2,6 +2,7 @@ package com.example.sskdt_app_v01;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -81,5 +82,6 @@ public class HomeActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPagerHomeScreen);
         bottomNavigationView = findViewById(R.id.bottom_nagivation);
         bottomNavigationView.setBackground(null);
+
     }
 }

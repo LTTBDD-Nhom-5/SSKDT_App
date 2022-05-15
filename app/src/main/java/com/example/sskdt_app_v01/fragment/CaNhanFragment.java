@@ -2,6 +2,7 @@ package com.example.sskdt_app_v01.fragment;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ import com.example.sskdt_app_v01.InfoUserActivity;
 import com.example.sskdt_app_v01.MainActivity;
 import com.example.sskdt_app_v01.R;
 import com.example.sskdt_app_v01.adapter.ListAdapterUser;
+import com.example.sskdt_app_v01.adapter.TransformCircle;
 import com.example.sskdt_app_v01.item.ItemUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -34,6 +36,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -44,6 +47,7 @@ public class CaNhanFragment extends Fragment {
     ListView listView;
     private TextView name,tel;
     private String doc;
+    private ImageView avatar;
 
 //     StorageReference storageReference;
 //     ImageView imageView;
@@ -58,6 +62,7 @@ public class CaNhanFragment extends Fragment {
         listView = view.findViewById(R.id.listViewUser);
         name = view.findViewById(R.id.canhan_name);
         tel = view.findViewById(R.id.canhan_phone);
+        avatar = view.findViewById(R.id.canhan_avatar);
         Bundle bundle = getActivity().getIntent().getExtras();
         String doc =  bundle.getString("uid");
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -71,6 +76,16 @@ public class CaNhanFragment extends Fragment {
                                 Log.d("TAG", "DocumentSnapshot data: " + document.getData());
                                 name.setText(document.getString("name"));
                                 tel.setText("0"+document.getString("phone").substring(3));
+                                if (!document.getString("image").equals("")) {
+                                    Picasso.with(view.getContext())
+                                            .load(document.getString("image"))
+                                            .placeholder(R.drawable.ic_user_circle_2)
+                                            .transform(new TransformCircle())
+                                            .into(avatar);
+                                } else {
+                                    avatar.setImageResource(R.drawable.ic_user_circle_2);
+                                }
+
                             } else {
                                 Log.d("TAG", "No such document");
                             }

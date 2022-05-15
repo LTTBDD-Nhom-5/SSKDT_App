@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -21,11 +22,13 @@ import com.example.sskdt_app_v01.HomeActivity;
 import com.example.sskdt_app_v01.ListHealthDeclarationActivity;
 import com.example.sskdt_app_v01.R;
 import com.example.sskdt_app_v01.adapter.GridAdapterHome;
+import com.example.sskdt_app_v01.adapter.TransformCircle;
 import com.example.sskdt_app_v01.item.ItemHome;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +37,16 @@ public class TrangChuFragment extends Fragment {
     GridView gridView;
     List<ItemHome> itemHomes;
     TextView user_name;
+    private ImageView avatar;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trang_chu, container, false);
+
+
+
+
+        avatar = view.findViewById(R.id.trang_chu_avatar);
 
         Bundle bundle = getActivity().getIntent().getExtras();
         String doc = bundle.getString("uid");
@@ -85,6 +94,16 @@ public class TrangChuFragment extends Fragment {
                             if (document.exists()) {
                                 Log.d("TAG", "DocumentSnapshot data: " + document.getData());
                                 user_name.setText(document.getString("name"));
+                                if (!document.getString("image").equals("")) {
+                                    Picasso.with(view.getContext())
+                                            .load(document.getString("image"))
+                                            .placeholder(R.drawable.ic_user_circle_1)
+                                            .transform(new TransformCircle())
+                                            .into(avatar);
+                                } else {
+                                    avatar.setImageResource(R.drawable.ic_user_circle_1);
+                                }
+
                             } else {
                                 Log.d("TAG", "No such document");
                             }
