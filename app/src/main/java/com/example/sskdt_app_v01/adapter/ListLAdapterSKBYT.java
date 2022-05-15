@@ -3,6 +3,7 @@ package com.example.sskdt_app_v01.adapter;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,14 @@ import com.example.sskdt_app_v01.R;
 import com.example.sskdt_app_v01.item.ItemLSKBYT;
 import com.example.sskdt_app_v01.item.ItemUser;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 public class ListLAdapterSKBYT extends BaseAdapter {
     private List<ItemLSKBYT> itemLSKBYTs;
@@ -44,7 +52,7 @@ public class ListLAdapterSKBYT extends BaseAdapter {
         view = LayoutInflater.from(context).inflate(R.layout.item_list_lskbyt, null);
 
 
-        TextView date = view.findViewById(R.id.item_lskbyt_date);
+        TextView day = view.findViewById(R.id.item_lskbyt_date);
         TextView month = view.findViewById(R.id.item_lskbyt_month);
         TextView year = view.findViewById(R.id.item_lskbyt_year);
         TextView name = view.findViewById(R.id.item_lskbyt_name);
@@ -54,8 +62,12 @@ public class ListLAdapterSKBYT extends BaseAdapter {
 
 
         name.setText(itemLSKBYTs.get(i).getName());
-        date.setText(formatNumber(itemLSKBYTs.get(i).getDate().getDay()));
-        month.setText(formatNumber(itemLSKBYTs.get(i).getDate().getMonth()));
+        TimeZone timeZone = TimeZone.getTimeZone("GMT+7");
+        Calendar calendar = Calendar.getInstance(timeZone);
+        calendar.setTime(itemLSKBYTs.get(i).getDate());
+        Date date = calendar.getTime();
+        day.setText(formatNumber(date.getDay()+15));
+        month.setText(formatNumber(itemLSKBYTs.get(i).getDate().getMonth()+1));
         year.setText(formatYear(itemLSKBYTs.get(i).getDate().getYear()));
         hour.setText(formatNumber(itemLSKBYTs.get(i).getDate().getHours()));
         minus.setText(formatNumber(itemLSKBYTs.get(i).getDate().getMinutes()));

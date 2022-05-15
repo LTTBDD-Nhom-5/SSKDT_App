@@ -23,7 +23,6 @@ import java.util.Locale;
 
 public class HealthDeclarationActivity extends AppCompatActivity {
     private EditText name,birth,phone,identification, email, city, district, ward, address;
-    private Date date_created;
     private RadioButton men, women, another, ans1, ans2,ans3,ans4, ans5;
     private FirebaseAuth mAuth;
     private Button btn_send_declaration;
@@ -77,6 +76,7 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                boolean gender = men.isChecked() ?false : true;
                 boolean ans1Ref = ans1.isChecked() ? false : true;
                 boolean ans2Ref = ans2.isChecked() ? false : true;
                 boolean ans3Ref = ans3.isChecked() ? false : true;
@@ -86,17 +86,17 @@ public class HealthDeclarationActivity extends AppCompatActivity {
 
 
                 HealthDeclaration declarationRef =new HealthDeclaration( "z23sded7678a9sdx978k" ,
-                        name.getText().toString().trim().toUpperCase(),birthRef,false,
+                        name.getText().toString().trim().toUpperCase(),birthRef,gender,
                         phone.getText().toString().trim(),
                         identification.getText().toString().trim(),
                         email.getText().toString().trim(),
                         city.getText().toString().trim(),
                         district.getText().toString().trim(),
                         ward.getText().toString().trim(),
-                        address.getText().toString(),date_created, ans1Ref,
+                        address.getText().toString(),new Date(), ans1Ref,
                         ans2Ref, ans3Ref, ans4Ref,ans5Ref
                         );
-                db.collection("HealthDeclaration").document(doc)
+                db.collection("HealthDeclarations").document(doc)
                         .set(declarationRef);
                 Intent intent = new Intent(HealthDeclarationActivity.this,HomeActivity.class);
                 intent.putExtra("uid",doc);
