@@ -1,19 +1,25 @@
 package com.example.sskdt_app_v01;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.sskdt_app_v01.model.HealthDeclaration;
 import com.example.sskdt_app_v01.model.User;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.ParseException;
@@ -70,23 +76,24 @@ public class HealthDeclarationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Date birthRef = null;
+
                 try {
                     birthRef= new SimpleDateFormat("dd/MM/yyyy").parse(birth.getText().toString().trim());
 
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                boolean gender = men.isChecked() ?false : true;
-                boolean ans1Ref = ans1.isChecked() ? false : true;
-                boolean ans2Ref = ans2.isChecked() ? false : true;
-                boolean ans3Ref = ans3.isChecked() ? false : true;
-                boolean ans4Ref = ans4.isChecked() ? false : true;
-                boolean ans5Ref = ans5.isChecked() ? false : true;
+                boolean gernderRef = men.isChecked() ? false  : true;
+                boolean ans1Ref = ans1.isChecked() ? true  : false;
+                boolean ans2Ref = ans2.isChecked() ? true  : false;
+                boolean ans3Ref = ans3.isChecked() ? true  : false;
+                boolean ans4Ref = ans4.isChecked() ? true  : false;
+                boolean ans5Ref = ans5.isChecked() ? true  : false;
 
 
 
-                HealthDeclaration declarationRef =new HealthDeclaration( "z23sded7678a9sdx978k" ,
-                        name.getText().toString().trim().toUpperCase(),birthRef,gender,
+                HealthDeclaration declarationRef =new HealthDeclaration( doc.toString().trim() ,
+                        name.getText().toString().trim().toUpperCase(),birthRef,gernderRef,                                                                       
                         phone.getText().toString().trim(),
                         identification.getText().toString().trim(),
                         email.getText().toString().trim(),
@@ -96,8 +103,21 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                         address.getText().toString(),new Date(), ans1Ref,
                         ans2Ref, ans3Ref, ans4Ref,ans5Ref
                         );
-                db.collection("HealthDeclarations").document(doc)
-                        .set(declarationRef);
+
+                db.collection("HealthDeclarations").add(declarationRef)
+                  .addOnSuccessListener(new OnSuccessListener<DocumentReference>(){
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("TAG", "Error adding document", e);
+                    }
+                });
+
                 Intent intent = new Intent(HealthDeclarationActivity.this,HomeActivity.class);
                 intent.putExtra("uid",doc);
                 startActivity(intent);
