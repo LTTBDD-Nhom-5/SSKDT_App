@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#CC47A7FB">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_return_info"
+        android:layout_width="360dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:letterSpacing="0.1"
+            android:text="Thông tin khai báo y tế"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView10"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow_left" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="412dp"
+        android:layout_height="695dp"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/background_01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_return_info">
+
+        <ScrollView
+            android:layout_width="410dp"
+            android:layout_height="693dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="40dp"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/qr" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="272dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:letterSpacing="0.1"
+                    android:text="Dùng mã QR ở trên để check in, check out tại các địa điểm càn thiết"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+                <TextView
+                    android:id="@+id/txt_thoi_gian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:letterSpacing="0.1"
+                    android:text="27/04/2022 - 14:31:20"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="412dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_thoi_gian">
+
+                    <TextView
+                        android:id="@+id/txt_tt_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.1"
+                        android:text="Nguyễn Hải Nam"
+                        android:textColor="#000000"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.1"
+                        android:text="Cảm ơn bạn đã gửi thông tin cho chúng tôi!"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_tt_name" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="349dp"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_02"
+                        android:gravity="center"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="21dp"
+                        android:paddingRight="21dp"
+                        android:text="Mọi thông tin chi tiết xin vui lòng liên hệ đường dây nóng: 1900 9095"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.507"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:text="Để phòng tránh, ngăn chặn, lây lan của virus, hãy chủ động thực hiện tốt các biện pháp sau:\n - Cần che mũi và miệng khi ho, xì mũi bằng khăn/giấy dùng 1 lần\n - Thường xuyên xúc miệng bằng nước xát khuẩn miệng\n - Tránh tiếp xúc với bất kì ai có dấu hiệu/triệu chứng cảm lạnh, triệu chứng như cúm\n - Nên hạn chế đi lại, hạn chế ra ngoài, lễ hội, chùa chiền\n - Ăn uống điều độ, uống nhiều nước, vận động đều đặn\n - Khi ra ngoài cần đeo khẩu trang, thường xuyên rửa tay, hạn chế ngồi phòng máy lạnh\n - Nhà cửa giữ xạch sẽ, thông thoáng, có ánh nắng càng tốt\n - Nếu thấy có biểu hiện của bệnh viêm đường hô hấp cấp tính, phải thông báo ngay cho cơ quan y tế gần nhất để được tư vấn, cách ly và điều trị phù hợp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
