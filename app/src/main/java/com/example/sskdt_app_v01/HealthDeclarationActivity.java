@@ -77,12 +77,14 @@ public class HealthDeclarationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Date birthRef = null;
+
                 try {
                     birthRef= new SimpleDateFormat("dd/MM/yyyy").parse(birth.getText().toString().trim());
 
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                boolean gernderRef = men.isChecked() ? false  : true;
                 boolean ans1Ref = ans1.isChecked() ? true  : false;
                 boolean ans2Ref = ans2.isChecked() ? true  : false;
                 boolean ans3Ref = ans3.isChecked() ? true  : false;
@@ -91,15 +93,15 @@ public class HealthDeclarationActivity extends AppCompatActivity {
 
 
 
-                HealthDeclaration declarationRef =new HealthDeclaration( "" ,
-                        name.getText().toString().trim().toUpperCase(),birthRef,false,
+                HealthDeclaration declarationRef =new HealthDeclaration( doc.toString().trim() ,
+                        name.getText().toString().trim().toUpperCase(),birthRef,gernderRef,
                         phone.getText().toString().trim(),
                         identification.getText().toString().trim(),
                         email.getText().toString().trim(),
                         city.getText().toString().trim(),
                         district.getText().toString().trim(),
                         ward.getText().toString().trim(),
-                        address.getText().toString(),date_created, ans1Ref,
+                        address.getText().toString(),new Date(), ans1Ref,
                         ans2Ref, ans3Ref, ans4Ref,ans5Ref
                         );
                 db.collection("HealthDeclarations").add(declarationRef)
