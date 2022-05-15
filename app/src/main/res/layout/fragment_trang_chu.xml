@@ -12,10 +12,11 @@
 
         <ImageView
             android:id="@+id/trang_chu_avatar"
-            android:layout_width="77dp"
-            android:layout_height="77dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="49dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_circle_02"
             android:src="@drawable/ic_user_circle_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -26,20 +27,21 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:text="Xin chào,"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/trang_chu_avatar"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/trang_chu_avatar" />
 
         <TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Nguyen Nhat Quang"
             android:textAllCaps="true"
             android:textColor="@color/black"
+            android:textSize="19sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -49,7 +51,7 @@
             android:layout_width="120dp"
             android:layout_height="200dp"
             android:layout_marginStart="7dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="22dp"
             android:background="@drawable/ic_background_icon_header_home_1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/trang_chu_avatar">

@@ -144,6 +144,8 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                         Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
 
                         Intent intent = new Intent(HealthDeclarationActivity.this,Info_healthActivity.class);
+                        intent.putExtra("name",declarationRef.getName());
+                        intent.putExtra("time" , new SimpleDateFormat("MM/dd/yyyy  HH:mm:ss").format(declarationRef.getCreate_at()));
                         intent.putExtra("uid",doc);
                         startActivity(intent);
                     }

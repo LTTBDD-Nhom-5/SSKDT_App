@@ -168,7 +168,7 @@ public class InfoUserActivity extends AppCompatActivity {
                         city.getText().toString().trim(),
                         district.getText().toString().trim(),
                         ward.getText().toString().trim(),
-                        address.getText().toString().trim(), null, pass );
+                        address.getText().toString().trim(), "", pass );
                 db.collection("Users").document(doc)
                         .set(u);
                 Intent intent = new Intent(InfoUserActivity.this,HomeActivity.class);
