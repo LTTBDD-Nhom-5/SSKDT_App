@@ -62,11 +62,9 @@ public class ListLAdapterSKBYT extends BaseAdapter {
 
 
         name.setText(itemLSKBYTs.get(i).getName());
-        TimeZone timeZone = TimeZone.getTimeZone("GMT+7");
-        Calendar calendar = Calendar.getInstance(timeZone);
-        calendar.setTime(itemLSKBYTs.get(i).getDate());
-        Date date = calendar.getTime();
-        day.setText(formatNumber(date.getDay()+15));
+
+
+        day.setText(formatNumber(itemLSKBYTs.get(i).getDate().getDay()+15));
         month.setText(formatNumber(itemLSKBYTs.get(i).getDate().getMonth()+1));
         year.setText(formatYear(itemLSKBYTs.get(i).getDate().getYear()));
         hour.setText(formatNumber(itemLSKBYTs.get(i).getDate().getHours()));

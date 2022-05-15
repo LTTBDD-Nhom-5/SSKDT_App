@@ -187,7 +187,6 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
                             case R.id.edit_declar:
                                 Intent intentEdit = new Intent(ListHealthDeclarationActivity.this , HealthDeclarationActivity.class);
                                 intentEdit.putExtra("HealthDeclar", itemLSKBYTs.get(position).getId());
-                                intentEdit.putExtra("editMode", true);
                                 intentEdit.putExtra("uid",uid);
                                 startActivity(intentEdit);
                                 return true;

@@ -162,15 +162,20 @@ public class InfoUserActivity extends AppCompatActivity {
                 boolean gioiTinh = nam.isChecked() ? false : true;
                 String cccd_2 = cccd.getText().toString().trim();
 
-                User u = new User(
-                        txtname, txtdate, gioiTinh,tell,
-                        cccd_2,email.getText().toString().trim(),
-                        city.getText().toString().trim(),
-                        district.getText().toString().trim(),
-                        ward.getText().toString().trim(),
-                        address.getText().toString().trim(), "", pass );
+                Map<String, Object> user = new HashMap<>();
+                user.put("name", txtname);
+                user.put("birthday", txtdate);
+                user.put("gender", gioiTinh);
+                user.put("identification", cccd_2);
+                user.put("email", email.getText().toString().trim());
+                user.put("city", city.getText().toString().trim());
+                user.put("district", district.getText().toString().trim());
+                user.put("ward", ward.getText().toString().trim());
+                user.put("address", address.getText().toString().trim());
+                user.put("password", pass);
+
                 db.collection("Users").document(doc)
-                        .set(u);
+                        .update(user);
                 Intent intent = new Intent(InfoUserActivity.this,HomeActivity.class);
                 intent.putExtra("uid",doc);
                 startActivity(intent);
@@ -194,9 +199,7 @@ public class InfoUserActivity extends AppCompatActivity {
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressDialog.dismiss();
                             Log.d("TAG", "onSuccess: upload success" );
-                            try {
-                                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-                                imgUser.setImageBitmap(bitmap);
+
                                 storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                     @Override
                                     public void onSuccess(Uri uri) {
@@ -210,14 +213,15 @@ public class InfoUserActivity extends AppCompatActivity {
                                         db.collection("Users")
                                                 .document(doc)
                                                 .update(map);
+                                        Picasso.with(getApplicationContext())
+                                                .load(downloadUrl.toString())
+                                                .placeholder(R.drawable.ic_user_circle_1)
+                                                .transform(new TransformCircle())
+                                                .into(avatar);
                                     }
                                 });
 
-                            }
-                            catch (IOException e)
-                            {
-                                e.printStackTrace();
-                            }
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

@@ -73,7 +73,21 @@ public class HealthDeclarationActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         doc =  bundle.getString("uid");
+        boolean isEditMode;
+        String healthDeclareID;
+        if (savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if(extras == null) {
+                healthDeclareID= null;
 
+            } else {
+                healthDeclareID = extras.getString("uid");
+
+            }
+        } else {
+            healthDeclareID= (String) savedInstanceState.getSerializable("uid");
+        }
+        isEditMode = healthDeclareID == null ? false : true;
         autoField();
 
         chk_khaiho.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +150,36 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                         address.getText().toString(),new Date(), ans1Ref,
                         ans2Ref, ans3Ref, ans4Ref,ans5Ref
                         );
+                if (isEditMode) {
+
+                    db.collection("HealthDeclarations").document(healthDeclareID).set(declarationRef).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Intent intent = new Intent(HealthDeclarationActivity.this,Info_healthActivity.class);
+                            intent.putExtra("uid",doc);
+                            startActivity(intent);
+                        }
+                    });
+                } else {
+                    db.collection("HealthDeclarations").add(declarationRef)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>(){
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+
+                                    Intent intent = new Intent(HealthDeclarationActivity.this,Info_healthActivity.class);
+                                    intent.putExtra("uid",doc);
+                                    startActivity(intent);
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("TAG", "Error adding document", e);
+                                }
+                            });
+                }
+
 
                 db.collection("HealthDeclarations").add(declarationRef)
                   .addOnSuccessListener(new OnSuccessListener<DocumentReference>(){
