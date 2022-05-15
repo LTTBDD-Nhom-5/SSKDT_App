@@ -31,6 +31,7 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -131,6 +132,7 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
         listView = findViewById(R.id.listLSKBYT);
         itemLSKBYTs = new ArrayList<ItemLSKBYT>();
         Task<QuerySnapshot> asd = db.collection("HealthDeclarations")
+                .whereEqualTo("userCreate",uid)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -144,7 +146,6 @@ public class ListHealthDeclarationActivity extends AppCompatActivity {
                                     itemLSKBYTs.add(new ItemLSKBYT(document.getId() ,timestamp.toDate(), data.get("name").toString()));
                                     ListLAdapterSKBYT adapter = new ListLAdapterSKBYT(itemLSKBYTs, getApplicationContext());
                                     listView.setAdapter(adapter);
-
                                 }
                             } else {
                                 none_item_list.setText("Bạn chưa có bản khai báo nào");

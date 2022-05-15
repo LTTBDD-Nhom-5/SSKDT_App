@@ -180,6 +180,26 @@ public class HealthDeclarationActivity extends AppCompatActivity {
                             });
                 }
 
+
+                db.collection("HealthDeclarations").add(declarationRef)
+                  .addOnSuccessListener(new OnSuccessListener<DocumentReference>(){
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+
+                        Intent intent = new Intent(HealthDeclarationActivity.this,Info_healthActivity.class);
+                        intent.putExtra("name",declarationRef.getName());
+                        intent.putExtra("time" , new SimpleDateFormat("MM/dd/yyyy  HH:mm:ss").format(declarationRef.getCreate_at()));
+                        intent.putExtra("uid",doc);
+                        startActivity(intent);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("TAG", "Error adding document", e);
+                    }
+                });
             }
         });
 

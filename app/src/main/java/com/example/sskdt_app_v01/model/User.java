@@ -43,10 +43,11 @@ public class User {
         this.address = address;
     }
 
-    public User(String name, String phone, String password) {
+    public User(String name, String phone, String password, String image) {
         this.name = name;
         this.phone = phone;
         this.password = password;
+        this.image = image;
     }
 
     public String getName() {

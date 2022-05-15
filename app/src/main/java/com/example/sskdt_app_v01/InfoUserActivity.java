@@ -174,13 +174,6 @@ public class InfoUserActivity extends AppCompatActivity {
                 user.put("address", address.getText().toString().trim());
                 user.put("password", pass);
 
-//                User u = new User(
-//                        txtname, txtdate, gioiTinh,tell,
-//                        cccd_2,email.getText().toString().trim(),
-//                        city.getText().toString().trim(),
-//                        district.getText().toString().trim(),
-//                        ward.getText().toString().trim(),
-//                        address.getText().toString().trim(), null, pass );
                 db.collection("Users").document(doc)
                         .update(user);
                 Intent intent = new Intent(InfoUserActivity.this,HomeActivity.class);

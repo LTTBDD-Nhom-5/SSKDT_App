@@ -109,7 +109,7 @@ public class VertifyActivity extends AppCompatActivity {
 
                 Log.d("TAG", "onSuccess: is login");
                 Bundle extras = getIntent().getExtras();
-                User user = new User(extras.getString("nameRegister"), extras.getString("phoneRegister"), extras.getString("passwordRegister"));
+                User user = new User(extras.getString("nameRegister"), extras.getString("phoneRegister"), extras.getString("passwordRegister"), "");
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 db.collection("Users") //add
                         .add(user)
