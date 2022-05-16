@@ -88,7 +88,7 @@
                     android:layout_marginTop="12dp"
                     android:gravity="center"
                     android:letterSpacing="0.1"
-                    android:text="Dùng mã QR ở trên để check in, check out tại các địa điểm càn thiết"
+                    android:text="Dùng mã QR ở trên để check in, check out tại các địa điểm cần thiết"
                     android:textColor="#000000"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -62,7 +62,6 @@ public class HealthDeclarationActivity extends AppCompatActivity {
 
         men = findViewById(R.id.rad_decla_men);
         women = findViewById(R.id.rad_decla_women);
-        another = findViewById(R.id.rad_decla_more);
         ans1= findViewById(R.id.rad_ans_01_y);
         ans2= findViewById(R.id.rad_ans_02_y);
         ans3= findViewById(R.id.rad_ans_03_y);

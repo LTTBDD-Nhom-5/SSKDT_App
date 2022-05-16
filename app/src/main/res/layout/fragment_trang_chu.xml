@@ -72,7 +72,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="10dp"
-                android:text="khai báo y tế"
+                android:text="Khai báo y tế"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="50px"
